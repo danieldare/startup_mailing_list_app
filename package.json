@@ -1,0 +1,23 @@
+{
+  "scripts": {
+    "createdb": "node --exec babel-node src/database/queries.js initialDatabaseQuery",
+    "start:dev": "nodemon --exec babel-node src/server.js && yarn createdb",
+    "build": "yarn build"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "faker": "^4.1.0",
+    "mysql": "^2.17.1"
+  },
+  "name": "startup_mailing_list_app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/danieldare/startup_mailing_list_app.git",
+  "author": "Segun Oluwadare <dodanieloluwadare@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/preset-env": "^7.5.5"
+  }
+}
