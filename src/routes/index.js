@@ -1,7 +1,7 @@
+import Controller from "../controller";
+
 const routes = (app) => {
-    app.get("/api", () => {
-        res.send("Hello")
-    })
+    app.get("/", Controller.registerUser )
 }
 
 export default routes;
