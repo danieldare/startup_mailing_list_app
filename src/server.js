@@ -1,9 +1,9 @@
 import express from "express";
 import path from "path";
 import morgan from "morgan";
-import connection from "./database";
 import routes from "./routes/index";
 import exphbs from "express-handlebars";
+import pool from "./database";
 
 
 const app = express();
@@ -14,14 +14,14 @@ app.set("view engine", ".hbs");
 
 app.use(morgan("dev"));
 app.use(express.urlencoded({extended: false}));
-app.use(express.static(path.join(__dirname, "public")))
+app.use(express.static(path.join(__dirname, "/public")))
 
 routes(app);
 
 const port = process.env.PORT || 4400;
 
 app.listen(port , () => {
-    connection.connect(err => {
+    pool.getConnection(err => {
         if(err){
             console.error(`An error occured ... ${err}`);
             throw err;

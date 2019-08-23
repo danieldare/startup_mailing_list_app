@@ -5,8 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+<link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    wefhdfhjefhj
+    <main class="bg-main">
+        <div class="page-container">
+            <h1 class="main-heading">JOIN US</h1>
+            <h3 class="submain-heading">We have <span class="count">{{ count }}</span>people on our waiting list</h3>
+            <div class="form-container">
+                <form method="POST" action="/add_email">
+                    <input type="text"  placeholder="Email Address" class="input_field" name="email" id="email"/>
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+            </div>
+        </div>
+       
+    </main>
+    {{!-- <script>
+        const input = doument.getElementBy("email");
+
+        
+    </script> --}}
 </body>
 </html>

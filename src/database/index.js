@@ -1,12 +1,13 @@
 import mysql from "mysql";
 
 const options = {
+    connectionLimit : 100,
     user: "root",
     password: "rootpassword",
     database: "mailing_list",
 }
 
-const connection = mysql.createConnection(options);
+const pool = mysql.createPool(options);
 
 
-export default connection;
+export default pool;

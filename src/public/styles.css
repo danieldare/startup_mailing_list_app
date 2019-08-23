@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(195, 174, 174);
+}
+
+.bg-main {
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(rgba(0, 145, 241, 0.644), rgba(228, 137, 137, 0.637)),
+    url("/img/beach-clouds-daytime-994605.jpg");
+  background-size: cover;
+  align-items: center;
+  height: 100vh;
+}
+
+.main-heading {
+  font-size: 180px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  background: -webkit-linear-gradient(rgb(255, 255, 255), rgba(0, 148, 255, 0.822));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.submain-heading {
+  font-size: 21px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.count {
+  background: rgba(34, 130, 198, 0.664);
+  border-radius: 3px;
+  margin: 0 5px;
+  text-align: center;
+  padding: 3px 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
+}
+
+.input_field {
+  padding: 15px 20px;
+  font-family: "Nunito", sans-serif;
+  height: 60px;
+  border-radius: 5px;
+  width: 100%;
+  outline: none;
+  border: none;
+  font-size: 16px;
+}
+
+.btn {
+  background: rgb(34, 130, 198);
+  padding: 10px 30px;
+  font-size: 16px;
+  text-align: center;
+  margin: 20px 0;
+  border-radius: 4px;
+  font-family: "Nunito", sans-serif;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}

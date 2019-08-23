@@ -1,4 +1,4 @@
-import connection from ".";
+import pool from ".";
 import faker from "faker";
 
 export const initialDatabaseQuery = () => {
@@ -7,7 +7,7 @@ export const initialDatabaseQuery = () => {
             created_at TIMESTAMP DEFAULT NOW()
         )`;
 
-        connection.query(query, (error, results, fields) => {
+        pool.query(query, (error, results, fields) => {
         if(error) {
             console.log(`An error occured!.. ${error}`);
             throw error;
@@ -22,13 +22,14 @@ export const insertUserTableQuery = () => {
     for(let i = 0; i < 500 ; i++){
         data.push([ faker.internet.email(), faker.date.past() ])
     }
-    connection.query(query , [data], (error, results, fields) => {
+    pool.query(query , [data], (error, results, fields) => {
         if(error){
             console.log(error);
             throw error;
         }
         console.log(results)
     })  
+    connection.end();
 }
 
 export const dropUserTable = () => {
@@ -40,8 +41,8 @@ export const dropUserTable = () => {
         }
         console.log(results);
     })
+    connection.end();
 }
 
-initialDatabaseQuery();
-insertUserTableQuery();
-connection.end();
+
+require("make-runnable");
